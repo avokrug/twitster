@@ -1,4 +1,4 @@
-package com.twister.twister;
+package com.twister.twister.controller;
 
 import com.twister.twister.domain.Message;
 import com.twister.twister.repos.MessageRepo;
@@ -13,10 +13,10 @@ import java.util.List;
 import java.util.Map;
 
 @Controller
-public class GreetingController {
+public class MainController {
     @Autowired
     private MessageRepo messageRepo;
-    @GetMapping("*/*")
+    @GetMapping("/")
     public String greeting(Map<String, Object> model) {
         return "greeting";
     }
