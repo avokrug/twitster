@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <div>
+        <form action="#" th:action="@{/logout}" method="post">
+            <p><input type="submit" value="Sing Out" /></p>
+        </form>
+    </div>
+    <div>
+        <form action="#" th:action="@{/add}" method="post">
+            <label>
+                <input type="text" th:name="text" placeholder="Enter message">
+            </label>
+            <label>
+                <input type="text" th:name="tag" placeholder="Enter tag">
+            </label>
+            <input type="submit" value="Add Message"/>
+        </form>
+    </div>
+    <form method="post" th:action="@{/filter}">
+        <label>
+            <input type="text" th:name="filter" placeholder="Enter filter">
+        </label>
+        <input type="submit" value="Search"/>
+    </form>
+    <p th:text="'Message List'">Message List</p>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Message</th>
+            <th>Tag</th>
+        </tr>
+        <tr th:each="msg : ${messages}">
+            <td th:text="${msg.getAuthor().getUsername()}"></td>
+            <td th:text="${msg.getText()}"></td>
+            <td th:text="${msg.getTag()}"></td>
+        </tr>
+    </table>
+</body>
+</html>
