@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<section>
+    <div th:replace="fragments/header :: header"></div>
+</section>
+<div>
+    <p th:text="'User List'">User List</p>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Role</th>
+        </tr>
+        <tr th:each="user : ${users}">
+            <td th:text="${user.getUsername()}"></td>
+            <td th:text="${user.getRoles()}"></td>
+            <td>
+                <a th:href="@{/user/__${user.id}__}">Edit</a>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

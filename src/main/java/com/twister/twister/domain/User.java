@@ -79,7 +79,7 @@ public class User implements UserDetails {
         this.active = active;
     }
 
-    private Set<Role> getRoles() {
+    public Set<Role> getRoles() {
         return roles;
     }
 

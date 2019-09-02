@@ -5,6 +5,9 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
+<section>
+    <div th:replace="fragments/header :: header"></div>
+</section>
 <form action="#" th:action="@{/login}" method="post">
     <div><label> User Name : <input type="text" th:name="username"/> </label></div>
     <div><label> Password: <input type="password" th:name="password"/> </label></div>

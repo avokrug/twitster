@@ -5,10 +5,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
+    <section>
+        <div th:replace="fragments/header :: header"></div>
+    </section>
     <div>
         <form action="#" th:action="@{/logout}" method="post">
             <p><input type="submit" value="Sing Out" /></p>
         </form>
+        <a th:href="@{/user}">User List</a>
     </div>
     <div>
         <form action="#" th:action="@{/add}" method="post">
@@ -21,9 +25,9 @@
             <input type="submit" value="Add Message"/>
         </form>
     </div>
-    <form method="post" th:action="@{/filter}">
+    <form method="get" th:action="@{/main}">
         <label>
-            <input type="text" th:name="filter" placeholder="Enter filter">
+            <input type="text" th:name="filter" th:value="${filter}" placeholder="Enter filter">
         </label>
         <input type="submit" value="Search"/>
     </form>

@@ -5,8 +5,10 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-<section>
-    <div th:replace="fragments/header :: header"></div>
-</section>
+    <th:block th:fragment="header">
+        <a th:href="@{/login}">Login Page</a>
+        <a th:href="@{/registration}">Registration</a>
+        <a th:href="@{/main}">Main Page</a>
+    </th:block>
 </body>
 </html>
